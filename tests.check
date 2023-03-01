@@ -1,0 +1,18 @@
+#include <check.h>
+
+#include "parser.h"
+
+#test test_open_file_1
+
+Model *temp;
+const char *inputStr = "objects/Lion.obj";
+temp = Parser(inputStr);
+free(temp->vertexes);
+free(temp->faces);
+free(temp);
+
+
+#test test_open_file_2
+
+const char *inputStr = "kion.obj";
+Parser(inputStr);
